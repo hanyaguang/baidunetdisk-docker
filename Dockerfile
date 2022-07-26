@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 
 ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.3.0/baidunetdisk_4.3.0_amd64.deb
 ENV NOVNC_PACKAGE https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.tar.gz
+ENV CHROME_PACKAGE https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 ENV VNC_SERVER_PASSWD password
 
@@ -47,6 +48,10 @@ RUN mkdir /root/.vnc && \
 RUN wget ${BAIDUNETDISK_PACKAGE} -O baidunetdisk.deb && \
   dpkg -i baidunetdisk.deb && \
   rm baidunetdisk.deb -f
+
+RUN wget ${CHROME_PACKAGE} -O chrome.deb && \
+  dpkg -i chrome.deb && \
+  rm chrome.deb -f
 
 # Download and extract noVNC, then remove the version number in directory name.
 RUN wget ${NOVNC_PACKAGE} -O novnc.tar.gz && \
