@@ -2,8 +2,8 @@ FROM ubuntu:22.04.1
 
 ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.17.7/baidunetdisk_4.17.7_amd64.deb
 ENV NOVNC_PACKAGE https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.tar.gz
-ENV CHROME_PACKAGE http://archive.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_75.0+build3-0ubuntu1_amd64.deb
-ENV VNC_SERVER_PASSWD password
+ENV FIREFOX_PACKAGE http://archive.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_75.0+build3-0ubuntu1_amd64.deb
+ENV VNC_SERVER_PASSWD 123456
 
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
@@ -48,9 +48,9 @@ RUN wget ${BAIDUNETDISK_PACKAGE} -O baidunetdisk.deb && \
   dpkg -i baidunetdisk.deb && \
   rm baidunetdisk.deb -f
 
-RUN wget ${CHROME_PACKAGE} -O chrome.deb && \
-  dpkg -i chrome.deb && \
-  rm chrome.deb -f
+RUN wget ${FIREFOX_PACKAGE} -O firefox.deb && \
+  dpkg -i firefox.deb && \
+  rm firefox.deb -f
 
 # Download and extract noVNC, then remove the version number in directory name.
 RUN wget ${NOVNC_PACKAGE} -O novnc.tar.gz && \
