@@ -1,9 +1,8 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04.1
 
-ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.3.0/baidunetdisk_4.3.0_amd64.deb
+ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.17.7/baidunetdisk_4.17.7_amd64.deb
 ENV NOVNC_PACKAGE https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.tar.gz
-ENV CHROME_PACKAGE https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
+ENV CHROME_PACKAGE http://archive.ubuntu.com/ubuntu/pool/main/f/firefox/firefox_75.0+build3-0ubuntu1_amd64.deb
 ENV VNC_SERVER_PASSWD password
 
 ENV LC_ALL C.UTF-8
