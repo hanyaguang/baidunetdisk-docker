@@ -1,4 +1,4 @@
-FROM ubuntu:22.04.1
+FROM ubuntu:22.04
 
 ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.17.7/baidunetdisk_4.17.7_amd64.deb
 ENV NOVNC_PACKAGE https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.tar.gz
