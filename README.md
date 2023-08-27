@@ -9,7 +9,7 @@ docker run --name baidunetdisk \
   -p {VNC端口}:5900 \
   -p {WEB端口}:6080 \
   -e VNC_SERVER_PASSWD='{VNC密码}' \
-  tzuhsiao/baidunetdisk:latest
+  hanyaguang/baidunetdisk:latest
 ```
 
 ## 通过VNC访问
