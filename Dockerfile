@@ -1,8 +1,9 @@
-FROM ubuntu:22.04
+FROM ubuntu:18.04
 
 ENV BAIDUNETDISK_PACKAGE https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.17.7/baidunetdisk_4.17.7_amd64.deb
 ENV NOVNC_PACKAGE https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.tar.gz
-ENV VNC_SERVER_PASSWD 123456
+
+ENV VNC_SERVER_PASSWD password
 
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
@@ -38,7 +39,7 @@ RUN apt-get -qqy update && \
     fonts-wqy-zenhei \
     firefox \
     xdg-utils && \
-  rm -rf /var/lib/apt/lists/* && \
+#  rm -rf /var/lib/apt/lists/* && \
   apt-get -qyy clean
 
 RUN mkdir /root/.vnc && \
@@ -47,7 +48,6 @@ RUN mkdir /root/.vnc && \
 RUN wget ${BAIDUNETDISK_PACKAGE} -O baidunetdisk.deb && \
   dpkg -i baidunetdisk.deb && \
   rm baidunetdisk.deb -f
-
 
 # Download and extract noVNC, then remove the version number in directory name.
 RUN wget ${NOVNC_PACKAGE} -O novnc.tar.gz && \
