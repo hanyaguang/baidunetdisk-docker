@@ -15,6 +15,7 @@ docker run --name baidunetdisk \
 
    sudo docker run -d   --name=baidunetdiskv3.2    -p 6080:6080    -p 5900:5900    -v /srv/dev-disk-by-label-Exos1/appdata/baidunetdisk1:/config    -v /srv/dev-disk-by-label-Exos1/downloads/BaiduNetdisk1:/config/baidunetdiskdownload    --restart unless-stopped    hanyaguang/baidunetdisk:v3
 
+由于vnc只能限定同一时间一个链接存在，可以多开docker镜像，对应其它端口
 
 ## 通过VNC访问
 默认端口为5900，使用任何VNC客户端连接，如[VNC® Viewer](https://www.realvnc.com/en/connect/download/viewer/)，[TightVNC](https://www.tightvnc.com/)。
